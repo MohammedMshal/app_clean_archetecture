@@ -5,18 +5,18 @@ import 'package:clean_archetecture/wather/data/models/weather_model.dart';
 import 'package:dio/dio.dart';
 
 abstract class BaseRemoteDataSource {
-  Future<WeatherModel?> getWeatherByCountrtName(String countryName);
+  Future<WeatherModel?> getWeatherByCountryName(String countryName);
 }
 
-class RmoteDataSource implements BaseRemoteDataSource {
+class RemoteDataSource implements BaseRemoteDataSource {
   @override
-  Future<WeatherModel?> getWeatherByCountrtName(String countryName) async {
+  Future<WeatherModel?> getWeatherByCountryName(String countryName) async {
     try {
       var response = await Dio().get(
-          '${AppConstans.baseURL}//weather?q=$countryName}&appid=$AppConstans.apiKey');
+          '${AppConstans.baseURL}//weather?q=$countryName&appid=${AppConstans.apiKey}');
       // ignore: avoid_print
       print(response);
-      return WeatherModel.fromJson(json.decode(response.data));
+      return WeatherModel.fromJson(response.data);
     } catch (e) {
       // ignore: avoid_print
       print(e);

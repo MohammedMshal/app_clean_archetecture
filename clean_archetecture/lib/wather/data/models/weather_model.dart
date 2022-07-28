@@ -1,4 +1,4 @@
-import 'package:clean_archetecture/wather/domain/entiteis/weather.dart';
+  import 'package:clean_archetecture/wather/domain/entiteis/weather.dart';
 
 class WeatherModel extends Weather {
   WeatherModel(
@@ -13,5 +13,5 @@ class WeatherModel extends Weather {
       json['name'],
       json['weather'][0]['description'],
       json['weather'][0]['main'],
-      json['main"']['pressure']);
+      json['main']['pressure']);
 }

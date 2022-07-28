@@ -4,10 +4,10 @@ import 'package:clean_archetecture/wather/domain/repository/base_weather_reposit
 import '../datasourse/remote_datasource.dart';
 
 class WeatherRepository implements BaseWeatherRepository {
-  final RmoteDataSource remoteDataSource;
-  WeatherRepository(this.remoteDataSource);
+  final BaseRemoteDataSource baseRemoteDataSource;
+  WeatherRepository(this.baseRemoteDataSource);
   @override
   Future<Weather> getWeatherByCityName(String countryName) async {
-    return (await remoteDataSource.getWeatherByCountrtName(countryName))!;
+    return (await baseRemoteDataSource.getWeatherByCountryName(countryName))!;
   }
 }
