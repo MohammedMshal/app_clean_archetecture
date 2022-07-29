@@ -1,5 +1,6 @@
 import 'package:clean_archetecture/wather/data/datasourse/remote_datasource.dart';
 import 'package:clean_archetecture/wather/data/repository/weather_repository.dart';
+import 'package:clean_archetecture/wather/domain/entiteis/weather.dart';
 import 'package:clean_archetecture/wather/domain/repository/base_weather_repository.dart';
 import 'package:clean_archetecture/wather/domain/usecases/get_weather_by_country_name.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +9,8 @@ void main() async {
   BaseRemoteDataSource baseRemoteDataSource = RemoteDataSource();
   BaseWeatherRepository baseWeatherRepository =
       WeatherRepository(baseRemoteDataSource);
-  await GetWeatherByCountryName(baseWeatherRepository).execute('Egypt');
-
+  Weather weather = await GetWeatherByCountryName(baseWeatherRepository).execute('Egypt');
+ print(weather);
   runApp(const MyApp());
 }
 
