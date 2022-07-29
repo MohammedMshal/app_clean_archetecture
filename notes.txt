@@ -1,0 +1,16 @@
+1- add base url in core/utils/constans.dart ;
+* - create class in constans and in class create static valu "base url"
+2- in domain layer create entiteis(model) ; 
+3- in domain layer repository 
+* - create abstract class BaseWeatherRpository ;
+* - futrue<Weather> getWeatherBycity(String countryName);
+4- in domain layer in usecases ;
+* - create class GetWeatherByCountry
+* - create object from BaseRepository 
+* - create function (String name)async{
+return await nameObj.getWeatherBycityName(name) prameter;
+}
+ 
+
+5 - in data layr in model "create model" ;
+6 - in Data Source use dio

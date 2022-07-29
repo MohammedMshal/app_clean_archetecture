@@ -9,9 +9,10 @@ class WeatherModel extends Weather {
     super.pressure,
   );
   factory WeatherModel.fromJson(Map<String, dynamic> json) => WeatherModel(
-      json['id'],
-      json['name'],
-      json['weather'][0]['description'],
-      json['weather'][0]['main'],
-      json['main']['pressure']);
+        json['id'],
+        json['name'],
+        json['weather'][0]['description'],
+        json['weather'][0]['main'],
+        json['main']['pressure'],
+      );
 }
